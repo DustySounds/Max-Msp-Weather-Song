@@ -1,0 +1,64 @@
+{
+	"body" : 	{
+		"coord" : 		{
+			"lon" : 8.75,
+			"lat" : 51.720001
+		}
+,
+		"sys" : 		{
+			"type" : 3,
+			"id" : 177301,
+			"message" : 0.1045,
+			"country" : "DE",
+			"sunrise" : 1422428960,
+			"sunset" : 1422461193
+		}
+,
+		"weather" : [ 			{
+				"id" : 500,
+				"main" : "Rain",
+				"description" : "light rain",
+				"icon" : "10n"
+			}
+ ],
+		"base" : "cmc stations",
+		"main" : 		{
+			"temp" : 275.519989,
+			"humidity" : 87,
+			"pressure" : 994,
+			"temp_min" : 275.149994,
+			"temp_max" : 275.75
+		}
+,
+		"wind" : 		{
+			"speed" : 9.21,
+			"deg" : 271.01001
+		}
+,
+		"rain" : 		{
+			"3h" : 2.5
+		}
+,
+		"clouds" : 		{
+			"all" : 88
+		}
+,
+		"dt" : 1422482962,
+		"id" : 2855745,
+		"name" : "Paderborn",
+		"cod" : 200
+	}
+,
+	"header" : "HTTP/1.1 200 OK\r\nServer: nginx\r\nDate: Wed, 28 Jan 2015 22:19:42 GMT\r\nContent-Type: application/json; charset=utf-8\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\nX-Source: back\r\nAccess-Control-Allow-Origin: *\r\nAccess-Control-Allow-Credentials: true\r\nAccess-Control-Allow-Methods: GET, POST\r\n\r\n",
+	"status" : 200,
+	"connect_code" : 0,
+	"url" : "http://api.openweathermap.org/data/2.5/weather?q=Paderborn,de&APIID=d4a077235d440a1e05d09371efb5ac74",
+	"filename_out" : "",
+	"file_time" : -1,
+	"total_time" : 1.669845,
+	"size_upload" : 0.0,
+	"size_download" : 455.0,
+	"content_length_download" : -1.0,
+	"content_length_upload" : 0.0,
+	"content_type" : "application/json; charset=utf-8"
+}
