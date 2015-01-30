@@ -22,10 +22,10 @@ clouds:
 		100=450Hz
 
 rain:
-	3h = amount in mm = duration of rain effect
+	3h = amount in mm = [Rain loudness starting point]
 
 snow:
-	3h = amount in mm = duration of snow effect
+	3h = amount in mm = [Snow loudness starting point]
 
 
 weather:
@@ -39,47 +39,73 @@ weather:
 
 	id ranges:
 
-	Thunderstorms = range 200 to 232
-		200-202 = thunderstorms with rain
-		210-212 = thunderstorms
-		221 = ragged thunderstorm = 213
-		230-232 = thunderstorms with drizzle (light rain)
+	Thunderstorms = range 200 to 232 						{1}
+		200-202 = thunderstorms with rain +{2}
+		210-213 = thunderstorms
+		##221 = ragged thunderstorm = 213##
+		230-232 = thunderstorms with drizzle (light rain) +{2}
 
-	Drizzle = range 300 to 321
+	Drizzle = range 300 to 321   	##send to {2}##
 		300-302 = drizzle
-		310-314 = drizzle rains
-		321 = shower drizzle = 313
+		310-314 = drizzle rains 
+		##321 = shower drizzle = 313 [w/ shower effect]##
 
-	Rain = range 500-531
+	Rain = range 500-531 									{2}
 		500-504 = rain
-		511 = freezing rain
-		520-522 = showers
-		531 = ragged showers = 523
+		511 = freezing rain [w/ freezing effect]
+		##531 = ragged showers = 523##
+		##520-522 = showers = 502-504  [w/ shower effect]##
 
-	Snow = range 600-622
+	Snow = range 600-622 									{3}
 		600-602 = snow
-		611-612 = sleet
-		615-616 = rain and snow
-		620-622 = snow showers
+		611-613 = sleet [w/ sleet effect]
+		615-616 = rain and snow +{2}
+		620-622 = snow showers [w/ showers effect]
 
 	Atmosphere = range 701-781
-		701-761 = fog,mist,haze types
-		762 = volcanic ash (use big boom)
-		771 = sqalls = 959
-		781 = tornado (its own synth obviously) = 900
+		701-761 = fog,mist,haze types 						{4}
+		762 = volcanic ash [w/ volcanic effect]
+		##771 = sqalls = 959##
+		##781 = tornado = 900##
 
-	Clouds = range 800-804 (default song bases)
+	Clouds = range 800-804 (default song bases) 			{5}
 
-	Extreme = 900-906  (start all with emergency beep into song)
-		900-902 = tornados with increasing rain
-		903 = cold (transpose songs down), play default
-		904 = hot  (transpose songs up), play default
-		905 = windy = 957
-		906 = hail = 613
+	Extreme = range 900-906  (start all with emergency beep into song)
+		900-902 = tornados with increasing rain +{2}		{6}
+		903 = cold (transpose songs down), to {5}
+		904 = hot  (transpose songs up), to {5}
+		##905 = windy = 957##
+		##906 = hail = 613##
 
-	Additional = 951-962
-		951-957 = calm to high wind
-		958-959 = gales (use sudden dynamic changes)
-		960-961 = storms = 212-213
-		962 = hurricane = 902
+	Additional = range 951-962
+		951-957 = calm to high wind [wind multiplier] to {5}
+		958-959 = gales [gust mult] to {5}
+		##960-961 = storms = 212-213##
+		##962 = hurricane = 902##
 	
+
+
+Total instruments = 6:
+{1} = Thunderstorms
+{2} = Rain
+{3} = Snow
+{4} = Fogs/hazes
+{5} = Clouds 	#Default#
+{6} = Tornadoes
+
+Total effects = 6:
+[cloud cover] = low pass shelf
+[humidity] = harmonic density
+[gust] = tempo variations
+[shower]
+[freezing]
+[sleet]
+[volcanic] = low boom/rumble
+
+Total multipliers = 2:
+[wind]
+[gust]
+
+Total adders = 2:
+[Rain loudness starting point]
+[Snow loudness starting point]
