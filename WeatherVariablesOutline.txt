@@ -1,0 +1,85 @@
+Weather Variables for synth controls for OpenWeatherMap Parsing
+	http://openweathermap.org/weather-conditions
+
+sys:
+	sunset - sunrise = length
+
+
+main:
+	humidity (%) = harmonic density
+
+	temp_min = frequency min
+	temp_max = freq. max
+
+wind:
+	speed = base tempo
+	degree = automated panning direction? 
+		(would only work for east-west)
+	gust = tempo variations
+
+clouds:
+	all = cloudiness (%) = low pass freq where 0=20kHz,
+		100=450Hz
+
+rain:
+	3h = amount in mm = duration of rain effect
+
+snow:
+	3h = amount in mm = duration of snow effect
+
+
+weather:
+	melody/instrument designators
+		global patterns:
+			3rd digit is intensity from 0 to 4 
+				(use for loundness)
+			2nd dig is next teir of condition
+			1st dig is next type of condition
+		ranges are inclusive
+
+	id ranges:
+
+	Thunderstorms = range 200 to 232
+		200-202 = thunderstorms with rain
+		210-212 = thunderstorms
+		221 = ragged thunderstorm = 213
+		230-232 = thunderstorms with drizzle (light rain)
+
+	Drizzle = range 300 to 321
+		300-302 = drizzle
+		310-314 = drizzle rains
+		321 = shower drizzle = 313
+
+	Rain = range 500-531
+		500-504 = rain
+		511 = freezing rain
+		520-522 = showers
+		531 = ragged showers = 523
+
+	Snow = range 600-622
+		600-602 = snow
+		611-612 = sleet
+		615-616 = rain and snow
+		620-622 = snow showers
+
+	Atmosphere = range 701-781
+		701-761 = fog,mist,haze types
+		762 = volcanic ash (use big boom)
+		771 = sqalls = 959
+		781 = tornado (its own synth obviously) = 900
+
+	Clouds = range 800-804 (default song bases)
+
+	Extreme = 900-906  (start all with emergency beep into song)
+		900-902 = tornados with increasing rain
+		903 = cold (transpose songs down), play default
+		904 = hot  (transpose songs up), play default
+		905 = windy = 957
+		906 = hail = 613
+
+	Additional = 951-962
+		951-957 = calm to high wind
+		958-959 = gales (use sudden dynamic changes)
+		960-961 = storms = 212-213
+		962 = hurricane = 902
+	

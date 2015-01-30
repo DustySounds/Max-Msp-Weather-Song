@@ -1,7 +1,0 @@
-{
-	"http_method" : "get",
-	"url" : "http://api.openweathermap.org/data/2.5/weather?q=Paderborn,de&APIID=d4a077235d440a1e05d09371efb5ac74",
-	"response_dict" : "data1",
-	"parse_type" : "json"
-
-}
